@@ -34,6 +34,17 @@ local toolchain_list =
     cross_lualong = 'int 32',
     version = '--version'
   },
+  [ 'arm-atollic-eabi-gcc' ] = {
+    compile = 'arm-atollic-eabi-gcc',
+    link = 'arm-atollic-eabi-ld',
+    asm = 'arm-atollic-eabi-as',
+    bin = 'arm-atollic-eabi-objcopy',
+    size = 'arm-atollic-eabi-size',
+    cross_cpumode = 'little',
+    cross_lua = 'float 64',
+    cross_lualong = 'int 32',
+    version = '--version'
+  },
   codesourcery = {
     compile = 'arm-none-eabi-gcc',
     link = 'arm-none-eabi-ld',
@@ -93,8 +104,8 @@ local arch_data = {
 
 -- Toolchain to arch mapping
 local toolchain_map = {
-  arm = { 'arm-gcc', 'codesourcery', 'devkitarm', 'arm-eabi-gcc' },
-  cortexm = { 'arm-gcc', 'codesourcery', 'devkitarm', 'arm-eabi-gcc' },
+  arm = { 'arm-gcc', 'codesourcery', 'devkitarm', 'arm-eabi-gcc', 'arm-atollic-eabi-gcc' },
+  cortexm = { 'arm-gcc', 'codesourcery', 'devkitarm', 'arm-eabi-gcc', 'arm-atollic-eabi-gcc' },
   avr32 = { 'avr32-gcc', 'avr32-unknown-none-gcc' },
   i386 =  { 'i686-gcc' }
 }
